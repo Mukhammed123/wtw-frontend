@@ -39,9 +39,9 @@ export default {
   methods: {
     async transferFunds() {
       try {
-        const response = await axios.post('URL', {
-          userId: this.userData.id,
-          recipientId: this.recipientId,
+        const response = await axios.post('http://5.59.232.33:85/test/transfer', {
+          sender_id: this.userData.telegram_id,
+          receiver_id: this.recipientId,
           amount: this.amount
         })
         this.balance -= this.amount
