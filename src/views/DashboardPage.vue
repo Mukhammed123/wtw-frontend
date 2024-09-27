@@ -1,20 +1,20 @@
-<!-- src/views/DashboardPage.vue -->
 <template>
   <div>
-    <UserDashboard :userData="userData" />
+    <UserDashboard :userData="user" />
   </div>
 </template>
 
 <script>
 import UserDashboard from '@/components/UserDashboard.vue'
+import { useUserStore } from '@/stores/user'
 
 export default {
-  data() {
+  setup() {
+    const userStore = useUserStore()
+    const user = userStore.user
+
     return {
-      userData: {
-        id: 1,
-        first_name: 'TestUser'
-      }
+      user
     }
   },
   components: {
