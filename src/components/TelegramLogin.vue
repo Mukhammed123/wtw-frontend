@@ -47,7 +47,9 @@ export default {
       document.getElementById('telegram-login-container').appendChild(script)
     })
 
-    return {}
+    return {
+      onTelegramAuth
+    }
   }
 }
 </script>
