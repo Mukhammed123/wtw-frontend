@@ -16,7 +16,7 @@ export default {
     const router = useRouter()
     const userStore = useUserStore()
 
-    function onTelegramAuth(user) {
+    window.onTelegramAuth = function (user) {
       const userData = {
         id: user.id,
         first_name: user.first_name,
@@ -47,9 +47,7 @@ export default {
       document.getElementById('telegram-login-container').appendChild(script)
     })
 
-    return {
-      onTelegramAuth
-    }
+    return {}
   }
 }
 </script>
